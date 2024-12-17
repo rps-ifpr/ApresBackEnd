@@ -4,7 +4,7 @@ import os
 
 # Título
 st.title('Sistema Simples de Gestão de Usuários')
-st.write("Interface de gerenciamento de usuários que demonstra as operações CRUD")
+st.write("Demonstra as operações CRUD")
 
 # Caminho do arquivo
 json_file_path = 'aulacrud.json'
