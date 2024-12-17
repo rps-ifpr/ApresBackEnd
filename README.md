@@ -37,12 +37,12 @@ O conteúdo será avaliado considerando dois aspectos:
 1. **Introdução e importância do tema**  
    Pergunta inicial: "Quem sabe o que define um desenvolvedor front-end de back-end ou ambos?"
 
-2. **Relação de Desenvolvedor front-end, back-end ou Full Stack **
+2. **Desenvolvedor front-end, back-end ou Full Stack**
    - Foco e Responsabilidades
    - Tecnologias comuns
    - Diferenças Práticas
-
-3. **Implicações**
+     
+3. **Conceitos e aplicações de CRUD**
 
 4. **Encerramento**
 
