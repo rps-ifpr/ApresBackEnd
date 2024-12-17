@@ -2,30 +2,30 @@ import streamlit as st
 import json
 import os
 
-# Título da aplicação
+# Título
 st.title('Sistema Simples de Gestão de Usuários')
 st.write("Interface de gerenciamento de usuários que demonstra as operações CRUD")
 
-# Caminho do arquivo JSON
-json_file_path = 'user_data.json'
+# Caminho do arquivo
+json_file_path = 'aulacrud.json'
 
-# Ler dados existentes no arquivo JSON (Operação "Read")
+# Ler dados existentes (Operação "Read")
 def load_user_data():
     if os.path.exists(json_file_path):
         with open(json_file_path, 'r') as file:
             return json.load(file)
     return []
 
-# Salvar dados no arquivo JSON (Operações "Create" e "Update")
+# Salvar dados (Operações "Create" e "Update")
 def save_user_data(data):
     with open(json_file_path, 'w') as file:
         json.dump(data, file, indent=4)
 
-# Carrega os dados ao iniciar o aplicativo
+# Carrega os dados ao iniciar
 if 'user_data' not in st.session_state:
     st.session_state.user_data = load_user_data()
 
-# Função para adicionar usuário (Operação "Create")
+# Função adicionar usuário (Operação "Create")
 def add_user():
     user_info = {
         'name': st.session_state.name,
@@ -41,7 +41,7 @@ def add_user():
 name = st.text_input('Nome:', key='name')
 email = st.text_input('E-mail:', key='email')
 
-# Botão para adicionar usuário
+# Botão
 if st.button('Adicionar Usuário', on_click=add_user):
     pass
 
@@ -58,7 +58,7 @@ def delete_user(index):
     save_user_data(st.session_state.user_data)
     st.success('Usuário excluído com sucesso! (Operação Delete)')
 
-# Seção para buscar e exibir dados de um usuário (Operação "Read")
+# Seção para buscar e exibir dados (Operação "Read")
 search_query = st.text_input('Buscar usuário por nome:')
 if search_query:
     found_users = [(index, user) for index, user in enumerate(st.session_state.user_data) if search_query.lower() in user['name'].lower()]
@@ -75,6 +75,6 @@ if search_query:
     else:
         st.error('Usuário não encontrado.')
 
-# Mostrar todos os usuários (Operação "Read")
+# Mostrar todos (Operação "Read")
 st.write('### Lista de Todos os Usuários')
 st.json(st.session_state.user_data)
