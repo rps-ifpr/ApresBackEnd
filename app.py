@@ -3,7 +3,7 @@ import json                   # Importa o módulo JSON para manipulação de dad
 import os                     # Importa o módulo OS para interagir com o sistema operacional (verificar existência de arquivos, etc.)
 
 # Título
-st.title('Sistema Simples de Gestão de Usuários')  
+st.title('Sistema de Gestão de Usuários')
 # Define o título da aplicação na interface do Streamlit
 
 st.write("Demonstra as operações CRUD")
